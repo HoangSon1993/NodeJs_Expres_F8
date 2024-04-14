@@ -34,6 +34,14 @@ app.get("/news", function (req, res) {
   res.render("new");
 });
 
+app.get("/search", function (req, res) {
+  console.log(req.query.q)
+  console.log(req.query.author)
+
+  //res.send("hello");
+  res.render("search");
+});
+
 app.listen(PORT, () => {
   console.log(`Example app listening at http://localhost:${PORT}`);
 });
