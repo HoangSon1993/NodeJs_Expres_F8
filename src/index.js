@@ -21,6 +21,9 @@ app.engine(
 app.set("view engine", ".hbs");
 app.set("views", path.join(__dirname, "resources/views"));
 
+// Static file
+app.use(express.static(path.join(__dirname, "public")));
+
 //Định nghĩa các route
 app.get("/", function (req, res) {
   //res.send("hello");
