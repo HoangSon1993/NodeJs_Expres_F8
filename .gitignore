@@ -2,5 +2,5 @@
 .idea
 .DS_Store
 
-scr/public/css/
+src/public/css/
 node_modules/
