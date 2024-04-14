@@ -1,0 +1,17 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="app">
+      {{>header}} {{! import file Header.hbs trong partials}}
+      <div class="container">
+        {{! 3 dấu ngoặc nhọn }}
+        {{{body}}}
+      </div>
+      {{>footer}} {{! import file Footer.hbs trong partials}}
+    </div>
+  </body>
+</html>
