@@ -5,6 +5,8 @@ const app = express(); // Trả về 1 Instance của express()
 // Chúng ta sẽ sử dụng nó xuyên suốt trong quá trình
 const PORT = 3000; // Khai báo biến PORT có giá trị 3000
 
+
+
 //Middleware
 app.use(express.urlencoded({
   extended: true
@@ -31,27 +33,11 @@ app.set("views", path.join(__dirname, "resources/views"));
 // Static file
 app.use(express.static(path.join(__dirname, "public")));
 
-//Định nghĩa các route
-app.get("/", function (req, res) {
-  //res.send("hello");
-  res.render("home");
-});
-app.get("/news", function (req, res) {
-  //res.send("hello");
-  res.render("new");
-});
+// Home, Search, Contat
 
-app.get("/search", function (req, res) {
-  console.log(req.query.q)
-
-  //res.send("hello");
-  res.render("search");
-});
-
-app.post("/search",(req,res)=>{
-  console.log(req.body)
-  res.send("")
-})
+// Đưa tất cả các route của app vào file /routes/index.js
+const route = require('./routes/index')
+route(app)
 
 app.listen(PORT, () => {
   console.log(`Example app listening at http://localhost:${PORT}`);
