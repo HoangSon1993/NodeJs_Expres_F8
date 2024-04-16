@@ -30,7 +30,7 @@ app.engine(
   })
 );
 app.set("view engine", ".hbs");
-app.set("views", path.join(__dirname, "resources/views"));
+app.set("views", path.join(__dirname, "resources","views"));
 
 // Static file
 app.use(express.static(path.join(__dirname, "public")));
@@ -42,5 +42,5 @@ const route = require('./routes/index')
 route(app)
 
 app.listen(PORT, () => {
-  console.log(`Example app listening at http://localhost:${PORT}`);
+  console.log(`App listening at http://localhost:${PORT}`);
 });
