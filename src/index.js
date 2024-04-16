@@ -5,7 +5,9 @@ const app = express(); // Trả về 1 Instance của express()
 // Chúng ta sẽ sử dụng nó xuyên suốt trong quá trình
 const PORT = 3000; // Khai báo biến PORT có giá trị 3000
 
-
+//Connect to db
+const db= require('./config/db/index')
+db.connect()
 
 //Middleware
 app.use(express.urlencoded({
