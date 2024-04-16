@@ -1,5 +1,7 @@
 function route(app) {
   //Định nghĩa các route
+  const coursesRouter = require("./courses")
+  app.use('/courses',coursesRouter)
 
   const newRouter = require("./news");
   app.use("/news", newRouter);
